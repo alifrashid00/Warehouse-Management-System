@@ -24,6 +24,7 @@ public abstract class ApiControllerBase : ControllerBase
             ErrorType.Conflict => Conflict(response),
             ErrorType.Unauthorized => Unauthorized(response),
             ErrorType.Forbidden => StatusCode(StatusCodes.Status403Forbidden, response),
+            ErrorType.ExternalService => StatusCode(StatusCodes.Status502BadGateway, response),
             _ => StatusCode(StatusCodes.Status500InternalServerError, response),
         };
     }

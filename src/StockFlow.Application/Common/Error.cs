@@ -7,6 +7,7 @@ public enum ErrorType
     Conflict,
     Unauthorized,
     Forbidden,
+    ExternalService,
 }
 
 public sealed record Error(string Code, string Message, ErrorType Type);
